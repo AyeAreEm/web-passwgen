@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (screen.width <= 699) {
+            document.location = "passw_mobile.html";
+        }
+    </script>
+    <link rel="shortcut icon" type="image/png" href="AyeAreEm.png">
+    <title>AyeLock</title>
+
+    <style>
+        * {
+            padding-left:0;
+            padding-right:0;
+            margin-left:0;
+            margin-right:0;
+            margin-bottom: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(#B20940, rgb(83, 79, 79));
+            background-color: #B20940;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dark-mode {
+            background: linear-gradient(rgb(68, 66, 66), rgb(36, 35, 35));
+            background-color: black;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h2.light {
+            color: rgb(59, 55, 55);
+        }
+
+        h6 {
+            font-size: 8px;
+        }
+
+        .words {
+            background: white;
+            width: 35%;
+            height: 100px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0);
+        }
+
+        a {
+            color: rgb(43, 42, 42);
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .black {
+            color: black;
+        }
+
+        #spotify {
+            color: white;
+        }
+
+        #spotify:hover {
+            background-color: rgb(0, 252, 105);
+            border-radius: 10px;
+        }
+
+        #insta {
+            color: white;
+        }
+
+        #insta:hover {
+            border-radius: 10px;
+            background: #d6249f;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+
+        #gmail {
+            color: white;
+        }
+
+        #gmail:hover {
+            background: rgb(206, 56, 56);
+            border-radius: 10px;
+        }
+
+        .bottom {
+            background: white;
+            width: 80%;
+            height: 30%;
+            border-radius: 10px;
+            margin: auto;
+            box-shadow: 15px 15px 15px rgb(0, 0, 0);
+        }
+
+        .tbottom {
+            margin-top: 100%;
+            background: white;
+            width: 80%;
+            height: 30%;
+            border-radius: 10px;
+            margin-left: 10%;
+            box-shadow: 15px 15px 15px rgb(0, 0, 0);
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgb(0, 204, 255);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+            width: 4%;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+
+        .check {
+            margin-top: 30%;
+            margin: 10%;
+            background: rgb(255, 255, 255);
+            width: 80%;
+            box-shadow: 15px 15px 15px rgb(0, 0, 0);
+            border-radius: 5px;
+            -webkit-transform: -webkit-tranform .5s ease-in-out;
+            transition: transform .5s ease-in-out;
+        }
+
+        .check:hover {
+            box-shadow: 25px 25px 25px rgb(0, 0, 0);
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+
+        input {
+            height: 30px;
+            width: 60%;
+            font-size: 20px;
+            background: rgb(0, 0, 0);
+            border: rgb(43, 42, 42);
+            border-radius: 5px;
+            color: white;
+            outline: none;
+        }
+
+        .result {
+            background: #B20940;
+            height: 35px;
+            width: 65px;
+            border-radius: 5px;
+            border: red;
+            color: white;
+        }
+
+        .social {
+            margin-top: 20%;
+            background: rgb(58, 57, 57);
+            color: white;
+            width: 100%;
+            height: 40%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+    <img src="AyeLock.png" alt="AyeLock" title="AyeLock" style="width: 340px; height: 110px;"><br><br>
+    <h1>These Are Randomly Generated Password</h1><br>
+    <a href="#bottom" id="scrolldown" class="fas fa-info-circle" title="Information"></a>&nbsp;&nbsp;&nbsp;
+    <a href="javascript:window.location.reload(true)" class="fas fa-sync-alt" title="Refresh"></a>&nbsp;&nbsp;&nbsp;
+    <a onclick="darkmode()" title="Dark Mode" class="fas fa-adjust"></a>
+    <h2 class="white">If You Don't Like Any Of These, Go Ahead And Refresh</h2><br>
+    <h6 class="white">(I Would Like To Apologize Because Sometimes The Generator Will Give A Rather Bad One, If This Happens, Just Refresh. Sorry For Any Troubles Caused By This.)</h6>
+    <div class="words">
+        <h2>Weak:</h2>
+        <h2 id="weak"></h2>
+    </div><br>
+
+    <div class="words">
+        <h2 style="color: #B20940;">Recommended:</h2>
+        <h2 id="rec"></h2>
+    </div><br>
+
+    <div class="words">
+        <h2>Strong:</h2>
+        <h2 id="strong"></h2>
+    </div><br>
+
+    <div class="words">
+        <h2 style="color: #B20940;">Easiest to read:</h2>
+        <h2 id="easyRead"></h2>
+    </div><br>
+
+    <div class="tbottom" id="bottom">
+        <h1 class="black">How It Works</h1>
+        <h2 class="light">In the background, there is over 100 lines of code (JavaScript) that takes all the letters in the English alphabet and randomly makes them Capitalized. While it's doing that, it also sprinkles in numbers and symbols.</h2>
+    </div>
+
+    <div class="bottom">
+        <h1 class="black">Why Is It All Random?</h1>
+        <h2 class="light">Well, the most common way for hackers to get a password is called a dictionary attack or brute force attack.</h2>
+    </div>
+
+    <div class="bottom">
+        <h1 class="black">Dictionary And Brute Force Attacks</h1>
+        <h2 class="light">How these attacks work is through another progamming or coding language, for example Python, C# and Java. The hacker has a list of common passwords that people use and the hacker will compare the passwords to a encrypted password. The program they make will encrypt the list of passwords the same way the password they are looking is. When the progam finds a pair of encrypted passwords that completely match, it will tell the hacker and he or she now has someones password.</h2>
+    </div>
+
+    <div class="bottom">
+        <h1 class="black">Why Did I Make This Website?</h1>
+        <h2 class="light">The reasons why I made this website is because I was able to make a program that does a dictionary/brute force attack. The problem with that is the fact that I'm 13 and if a 13 year old can do this, anyone can.</h2>
+    </div>
+
+    <div class="bottom">
+        <h1 class="black">Why You Should Actually Use These Passwords</h1>
+        <h2 class="light">Everyone uses Chrome right? If you don't, that's fine because I'm pretty sure that other browsers do what I am about to tell you. Google has a feature where they save your passwords for websites. You can check which websites if you go to settings and seach "password" in the search bar. You will be able to see "Autofill" and right under in the category, you will see Passwords. Click on it and you will see all the saved and never saved passwords for websites. If you click on the eye, It will ask you for your computers password to be able to your saved passwords.</h2>
+    </div>
+
+    <div class="check">
+        <h1 class="black" id="check">Test out your password</h1><br>
+        <input type="password">
+        <button onclick="pass_check()" class="result">Results</button>
+    </div>
+
+    <div class="social">
+        <h1>Media:</h1>
+        <h2 class="white">Please Only Use My Gmail For Business inquires, Issues Regarding The Website And Or Issues Regarding Password Security.</h2><br>
+        <a href="mailto:ag.ayeareem@gmail.com" id="gmail" class="far fa-envelope" style="font-size: 50px;" title="Gmail"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/ag.ayeareem/" id="insta" class="fab fa-instagram-square" style="font-size: 50px;" title="Instagram"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://open.spotify.com/playlist/5LKfwHgOc6iFyOZP1bulPr?si=UgXJZlU5R4yc0kTs8sQ4tA" id="spotify" class="fab fa-spotify" style="font-size: 50px;" title="Spotify"></a><br><br><br>
+
+        <h1>About:</h1>
+        <h2 class="white">My name is Adrian. When it comes to business or media, My "name" is AyeAreEm. I have quite a few hobbies, programming/coding, pakour, professional cheerleading, magic. I guess this is a hobby but it's only when I'm with friends, basketball.</h2>
+        <h2 class="white">My first website ever is <a class="white" href="https://ayeareem.000webhostapp.com" style="text-decoration: underline;">https://ayeareem.000webhostapp.com</a></h2><br>
+
+        <h1>Special Thanks:</h1>
+        <h2 class="white">Thank You Milosh For The Image, For The Name Of The Website And Just For Helping Me. I Really Appreciate It &#9829;</h2><br>
+        <p>©2020 AyeAreEm</p>
+    </div>
+
+    <script src="passw_gen.js"></script>
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function darkmode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+
+        function pass_check() {
+            var checkPSW = document.getElementById("check")
+
+            var check = [
+                "Just no",
+                "This is just bad.",
+                "Come on, you will get it one day",
+                "You: Passwords, what's that, I don't need that.",
+                "I got probably get this password, and I am 13",
+                "Oh, you done? Greatttt. This is an amazinggg passwordd",
+                "My cat could jump on my keyboard and it would do better than yours",
+                "uwu dwont cuwme bak tuw me cying when youwu beun haked"
+            ]
+
+            var answer = check[Math.floor(Math.random() * check.length)];
+            checkPSW.textContent = answer;
+        }
+    </script>
+</body>
+</html>
