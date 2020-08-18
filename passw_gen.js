@@ -1,89 +1,45 @@
-function genWeak( len ) {
-    var length = (len)?(len):(12);
-    var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
-    var numeric = '0123456789';
-    var punctuation = "'!@#$%^&*()_+~`|}{[]\:;?><,./-=";
-    var password = "";
-    var character = "";
-    var crunch = true;
-    while( password.length<length ) {
-        entity1 = Math.ceil(string.length * Math.random()*Math.random());
-        entity2 = Math.ceil(numeric.length * Math.random()*Math.random());
-        entity3 = Math.ceil(punctuation.length * Math.random()*Math.random());
-        hold = string.charAt( entity1 );
-        hold = (password.length%2==0)?(hold.toUpperCase()):(hold);
-        character += hold;
-        character += numeric.charAt( entity2 );
-        character += punctuation.charAt( entity3 );
-        password = character;
-    }
-    password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
-    return password.substr(0,len);
-}
-document.getElementById("weak").innerHTML = genWeak();
+function generatePassword(_isWithLetters, _isWithUpperCase, _isWithNumbers, _isWithSpecial, _numlen) {
+    var _lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+    var _upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var _numbers = "0123456789";
+    var _special = "!@#%^&*()_-+={}[]:'/?\$|;.,";
 
-function genRec( len ) {
-    var length = (len)?(len):(15);
-    var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
-    var numeric = '0123456789';
-    var punctuation = "'!@#$%^&*()_+~`|}{[]\:;?><,./-=";
-    var password = "";
-    var character = "";
-    var crunch = true;
-    while( password.length<length ) {
-        entity1 = Math.ceil(string.length * Math.random()*Math.random());
-        entity2 = Math.ceil(numeric.length * Math.random()*Math.random());
-        entity3 = Math.ceil(punctuation.length * Math.random()*Math.random());
-        hold = string.charAt( entity1 );
-        hold = (password.length%2==0)?(hold.toUpperCase()):(hold);
-        character += hold;
-        character += numeric.charAt( entity2 );
-        character += punctuation.charAt( entity3 );
-        password = character;
-    }
-    password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
-    return password.substr(0,len);
-}
-document.getElementById("rec").innerHTML = genRec();
+    var _allowedChars = "";
 
-function genStrong( len ) {
-    var length = (len)?(len):(16);
-    var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
-    var numeric = '0123456789';
-    var punctuation = "'!@#$%^&*()_+~`|}{[]\:;?><,./-=";
-    var password = "";
-    var character = "";
-    var crunch = true;
-    while( password.length<length ) {
-        entity1 = Math.ceil(string.length * Math.random()*Math.random());
-        entity2 = Math.ceil(numeric.length * Math.random()*Math.random());
-        entity3 = Math.ceil(punctuation.length * Math.random()*Math.random());
-        hold = string.charAt( entity1 );
-        hold = (password.length%2==0)?(hold.toUpperCase()):(hold);
-        character += hold;
-        character += numeric.charAt( entity2 );
-        character += punctuation.charAt( entity3 );
-        password = character;
-    }
-    password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
-    return password.substr(0,len);
-}
-document.getElementById("strong").innerHTML = genStrong();
+    _allowedChars += (_isWithLetters ? _lowerCaseLetters : '');
+    _allowedChars += (_isWithUpperCase ? _upperCaseLetters : '');
+    _allowedChars += (_isWithNumbers ? _numbers : '');
+    _allowedChars += (_isWithSpecial ? _special : '');
 
-function genEasyRead( len ) {
-    var length = (len)?(len):(16);
-    var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
-    var password = "";
-    var character = "";
-    var crunch = true;
-    while( password.length<length ) {
-        entity1 = Math.ceil(string.length * Math.random()*Math.random());
-        hold = string.charAt( entity1 );
-        hold = (password.length%2==0)?(hold.toUpperCase()):(hold);
-        character += hold;
-        password = character;
+    
+
+    var _result = "";
+
+    for (var i = 0, n = _allowedChars.length; i < _numlen; ++i) {
+        _result += _allowedChars.charAt(Math.floor(Math.random() * n));
     }
-    password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
-    return password.substr(0,len);
+
+    return _result;
 }
-document.getElementById("easyRead").innerHTML = genEasyRead();
+
+var weak = generatePassword(true, true, true, true, 12);
+var rec = generatePassword(true, true, true, true, 15);
+var strong = generatePassword(true, true, true, true, 18);
+var easy = generatePassword(true, true, false, false, 16);
+
+document.getElementById("weak").innerHTML = weak;
+document.getElementById("rec").innerHTML = rec;
+document.getElementById("strong").innerHTML = strong;
+document.getElementById("easyRead").innerHTML = easy;
+
+function refreshpass() {
+    weak = generatePassword(true, true, true, true, 12);
+    rec = generatePassword(true, true, true, true, 15);
+    strong = generatePassword(true, true, true, true, 18);
+    easy = generatePassword(true, true, false, false, 16);
+
+    document.getElementById("weak").innerHTML = weak;
+    document.getElementById("rec").innerHTML = rec;
+    document.getElementById("strong").innerHTML = strong;
+    document.getElementById("easyRead").innerHTML = easy;
+}
