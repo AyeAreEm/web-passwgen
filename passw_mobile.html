@@ -158,33 +158,34 @@
     </style>
 </head>
 <body>
+    <!-- This button is to bring the user back to the top after scrolling down-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
 
     <img src="AyeLock.png" alt="AyeLock" title="AyeLock" style="width: 300px; height: 110px;"><br><br>
     <h1>These Are Randomly Generated Password</h1><br>
-    <a href="#bottom" id="scrolldown" class="fas fa-info-circle" title="Information"></a>&nbsp;&nbsp;&nbsp;
-    <a href="javascript:window.location.reload(true)" class="fas fa-sync-alt" title="Refresh"></a>&nbsp;&nbsp;&nbsp;
-    <a onclick="darkmode();" title="Dark Mode" class="fas fa-adjust"></a>
+    <a href="#bottom" id="scrolldown" class="fas fa-info-circle" title="Information"></a>&nbsp;&nbsp;&nbsp;<!-- This brings the user to the information section-->
+    <a onclick="refreshpass()" class="fas fa-sync-alt" title="Refresh"></a>&nbsp;&nbsp;&nbsp;<!-- This refreshs the passwords using the function refreshpass()-->
+    <a onclick="darkmode();" title="Dark Mode" class="fas fa-adjust"></a><!-- This puts the wbesite into darkmode-->
     <h2 class="white">If You Don't Like Any Of These, Go Ahead And Refresh</h2><br>
     <h6 class="white">(I Would Like To Apologize Because Sometimes The Generator Will Give A Rather Bad One, If This Happens, Just Refresh. Sorry For Any Troubles Caused By This.)</h6>
     <div class="words">
         <h2>Weak:</h2>
-        <h2 id="weak"></h2>
+        <h2 id="weak"></h2><!-- This is where the weak password goes-->
     </div><br>
 
     <div class="words">
         <h2 style="color: #B20940;">Recommended:</h2>
-        <h2 id="rec"></h2>
+        <h2 id="rec"></h2><!-- This is where the recommended password goes-->
     </div><br>
 
     <div class="words">
         <h2>Strong:</h2>
-        <h2 id="strong"></h2>
+        <h2 id="strong"></h2><!-- This is where the strong password goes-->
     </div><br>
 
     <div class="words">
         <h2 style="color: #B20940;">Easiest to read:</h2>
-        <h2 id="easyRead"></h2>
+        <h2 id="easyRead"></h2><!-- This is where the easy to read password goes-->
     </div><br>
 
     <div class="tbottom" id="bottom">
